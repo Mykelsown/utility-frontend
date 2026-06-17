@@ -69,7 +69,7 @@ export function GridMap() {
   const isDraggingRef = useRef(false);
   const lastPointerRef = useRef({ x: 0, y: 0 });
   const dprRef = useRef(1);
-  const resizeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const resizeTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const needsRebuildRef = useRef(true);
   const { mode } = useTheme();
   const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
