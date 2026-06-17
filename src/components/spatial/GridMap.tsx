@@ -74,13 +74,6 @@ export function GridMap() {
   const { mode } = useTheme();
   const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
 
-  const getCanvasSize = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return { w: 800, h: 500 };
-    const dpr = dprRef.current;
-    return { w: canvas.clientWidth * dpr, h: canvas.clientHeight * dpr };
-  }, []);
-
   const setupCanvasDpr = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
