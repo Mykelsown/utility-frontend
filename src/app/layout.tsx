@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { WalletProvider } from "@/components/providers/WalletProvider";
+import { ServiceWorkerProvider } from "@/components/providers/ServiceWorkerProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,9 +43,11 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className="min-h-screen bg-background text-foreground">
-        <ThemeProvider>
-          <WalletProvider>{children}</WalletProvider>
-        </ThemeProvider>
+        <ServiceWorkerProvider>
+          <ThemeProvider>
+            <WalletProvider>{children}</WalletProvider>
+          </ThemeProvider>
+        </ServiceWorkerProvider>
       </body>
     </html>
   );
