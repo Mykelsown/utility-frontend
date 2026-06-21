@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { FleetGrid } from "@/components/spatial/FleetGrid";
 import { useWeb3Auth } from "@/hooks/useWeb3Auth";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const GridMapSkeleton = () => (
   <div className="w-full h-[500px] rounded-xl bg-muted animate-pulse flex items-center justify-center border border-border">
@@ -72,6 +73,7 @@ export default function Home() {
             Utility Protocol
           </h1>
           <nav className="flex items-center gap-4">
+            <ThemeToggle />
             {isConnected ? (
               <div className="flex items-center gap-3">
                 <span className="text-sm text-muted-foreground truncate max-w-[160px]">

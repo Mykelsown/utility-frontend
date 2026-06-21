@@ -43,7 +43,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (!mounted) return;
     const root = document.documentElement;
     root.classList.remove("light", "dark", "high-contrast");
-    if (mode !== "light") root.classList.add(mode);
+    root.classList.add(mode);
     localStorage.setItem("utility-theme", mode);
   }, [mode, mounted]);
 
